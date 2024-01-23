@@ -61,6 +61,8 @@ class authController extends Controller
 
     public function authenticate(Request $request)
     {
+        // dd($request->all());
+
         //compare the give data with the db to see if they are valid
         $credentials = $request->validate([
             'email' => 'required|email',
@@ -71,7 +73,7 @@ class authController extends Controller
         if (Auth::attempt($credentials)) {
             //if yes then redirect to dashboard with success message
             $request->session()->regenerate();
-            //            return redirect()->route('dashboard')->withSuccess('logged in successfully');
+            //return redirect()->route('dashboard')->withSuccess('logged in successfully');
             $redirectTo = RouteServiceProvider::HOME;
         }
         //if not success then return back with errors saying login failed
