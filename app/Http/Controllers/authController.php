@@ -21,31 +21,36 @@ class authController extends Controller
 
     public function store(Request $request)
     {
-        //requesting data from the form
+        // dd($request->all());
+
         $request->validate([
             'name' => 'required|string|max:250',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:8|confirmed',
-            'user_type' => 'required|string|max:250',
+            'user_type' => 'required|string|max:250|in:customer,venue,catering',
         ]);
-
-        //creating a user in the database using the obtained data
+    
+        // Creating a user in the database using the obtained data
         User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => Hash::make($request->password),
+            'password' => bcrypt($request->password),
             'user_type' => $request->user_type,
         ]);
-
-        //making the credentials with the only required fields for login
+    
+        // Making the credentials with the only required fields for login
         $credentials = $request->only('email', 'password');
-        //adding auth for login session
+        
+        // Adding auth for login session
         Auth::attempt($credentials);
-        //making a login session
+    
+        // Making a login session
         $request->session()->regenerate();
-        //redirecting to the dashboard as the logged-in user
-        return redirect()->route('home');
+    
+        // Redirecting to the dashboard as the logged-in user
+        return redirect()->route('dashboard');
     }
+    
     //function to return the login page for the user to login in
     public function login()
     {

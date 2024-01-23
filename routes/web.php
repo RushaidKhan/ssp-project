@@ -18,19 +18,11 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-// Route::controller(authController::class)->group(function () {
-//     Route::get('/register', 'ShowRegister')->name('register');
-//     Route::get('/login', 'ShowLogin')->name('login');
-//     Route::post('/register', 'authController@StoreRegister')->name('storeRegister');
-// });
-
-// Route::get('/register', 'authController@ShowRegister')->name('register');
-// Route::get('/login', 'authController@ShowLogin')->name('login');
-// Route::post('/register', 'authController@StoreRegister')->name('storeRegister');
-
 Route::controller(authController::class)->group(function () {
     Route::get('/register', 'register')->name('register');
     Route::post('/store', 'store')->name('store');
     Route::get('/login', 'login')->name('login');
     Route::post('/authenticate', 'authenticate')->name('authenticate');
+    Route::get('/dashboard', 'dashboard')->name('dashboard');
+    Route::post('/logout', 'logout')->name('logout');
 });
