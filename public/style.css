@@ -1,0 +1,99 @@
+:root {
+    --ivory: #fff5e1;
+    --gold: #ffbf00;
+    --pink: #fe828c;
+    --blue: #001f3f;
+    --green: #8f9779;
+    --burgundy: #800000;
+}
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+html {
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--ivory);
+}
+
+/*designs for navbar.blade.php*/
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+}
+nav a {
+    text-decoration: none;
+    color: var(--pink);
+    padding: 10px;
+    font-size: 1.5em;
+    margin: 10px;
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 300;
+    font-style: italic;
+}
+nav a:hover {
+    color: var(--blue);
+    text-decoration: underline;
+    transition: all 0.3s ease-in;
+}
+nav h1 {
+    padding: 10px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 25px;
+    font-weight: 300;
+    margin: 10px;
+}
+nav h1 span {
+    color: var(--pink);
+}
+nav div {
+    display: flex;
+    justify-content: center;
+}
+/*designs for welcome.blade.php*/
+
+.welcomeOne {
+    display: flex;
+    /* border: 1px solid black; */
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+}
+.welcomeOne p {
+    font-family: "Cormorant Garmond";
+    font-style: italic;
+    font-size: 2em;
+    color: var(--green);
+}
+.welcomeOne h1 {
+    font-size: 3em;
+}
+.welcomeOne h1 span {
+    color: var(--pink);
+}
+.welcomeTwo {
+    margin: 10px;
+    padding: 10px;
+    /* border: 1px solid black; */
+}
+.welcomeTwo h1 {
+    text-transform: capitalize;
+    color: var(--pink);
+    font-size: 2.5em;
+}
+.offerContent {
+    border: 1px solid var(--burgundy);
+    height: 150px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+}
+.offerContent p {
+    color: var(--green);
+}
+.offerContent h2 {
+    color: var(--blue);
+}
