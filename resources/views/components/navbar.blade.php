@@ -5,11 +5,13 @@
             <a href="#">Store</a>
             <a href="#">Blog</a>
         </div>
-        <h1>Sovereign|<span>Settings</span></h1>
+        <a href="{{route('home')}}" class="mainNav">
+            <h1>Sovereign|<span>Settings</span></h1>
+        </a>
         <div>
             @guest
-            <a href="#">Login</a>
-            <a href="#">Register</a>
+            <a href="{{route('login')}}">Login</a>
+            <a href="{{route('register')}}">Register</a>
             @else
             <a href="#">User</a>    
             @endguest
