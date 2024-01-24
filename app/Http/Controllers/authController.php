@@ -60,24 +60,22 @@ class authController extends Controller
 
     public function authenticate(Request $request)
     {
-        // dd($request->all());
-
-        //compare the give data with the db to see if they are valid
+        // Compare the given data with the database to see if they are valid
         $credentials = $request->validate([
             'email' => 'required|email',
             'password' => 'required',
         ]);
-
-        // if statement to handle situation
+    
+        // If statement to handle the situation
         if (Auth::attempt($credentials)) {
-            //if yes then redirect to dashboard with success message
-            $request->session()->regenerate();
-            //return redirect()->route('dashboard')->withSuccess('logged in successfully');
-            $redirectTo = RouteServiceProvider::HOME;
+            // If yes, then redirect to the dashboard with a success message
+            return redirect()->route('dashboard')->withSuccess('Logged in successfully');
         }
-        //if not success then return back with errors saying login failed
-        return back()->withErrors(['email' => 'whoops check your email and password please',])->onlyInput('email');
+    
+        // If not successful, then return back with errors saying login failed
+        return back()->withErrors(['email' => 'Whoops, check your email and password, please'])->onlyInput('email');
     }
+    
 
     //function to handle dashboard access
     public function dashboard()
@@ -85,13 +83,13 @@ class authController extends Controller
         if (Auth::check()) {
             //if user is authenticated the user is give the dashboard view
             if (auth()->user()->user_type == 'admin') {
-                return redirect()->route('admin.dashboard');
+                return redirect()->route('admin.home');
             } elseif (auth()->user()->user_type == 'customer') {
-                return redirect()->route('dashboard.customer');
+                return redirect()->route('home');
             } elseif (auth()->user()->user_type == 'catering') {
-                return redirect()->route('dashboard.catering');
+                return redirect()->route('catering.home');
             } elseif (auth()->user()->user_type == 'venue') {
-                return redirect()->route('dashboard.venue');
+                return redirect()->route('venue.home');
             } else {
                 return redirect()
                     ->route('login')
