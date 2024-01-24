@@ -9,7 +9,7 @@
             </div>
         </div>
         <div class="registerFormHolder">
-            <a href="{{route('home')}}">
+            <a href="{{route('landing')}}">
                 <h1>Sovereign|<span>Settings</span></h1>
             </a>
             <form action="{{route('authenticate')}}" method="post">

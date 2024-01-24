@@ -1,11 +1,11 @@
 <div>
     <nav>
         <div>
-            <a href="#">Home</a>
+            <a href="{{route('landing')}}">Home</a>
             <a href="#">Store</a>
             <a href="#">Blog</a>
         </div>
-        <a href="{{route('home')}}" class="mainNav">
+        <a href="{{route('landing')}}" class="mainNav">
             <h1>Sovereign|<span>Settings</span></h1>
         </a>
         <div>
@@ -20,7 +20,7 @@
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                     @csrf
                 </form>
-            <a href="{{route('logout')}}">{{Auth::user()->name}}</a>    
+            <a href="{{route('home')}}">{{Auth::user()->name}}</a>    
             @endguest
         </div>
     </nav>

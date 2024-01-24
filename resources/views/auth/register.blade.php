@@ -3,7 +3,7 @@
 @section('content')
     <div class="registerWrapper">
         <div class="registerFormHolder">
-            <a href="{{ route('home') }}">
+            <a href="{{ route('landing') }}">
                 <h1>Sovereign|<span>Settings</span></h1>
             </a>
             <form action="{{ route('store') }}" method="post">

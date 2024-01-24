@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use App\Providers\RouteServiceProvider;
 
@@ -77,11 +76,7 @@ class authController extends Controller
             $redirectTo = RouteServiceProvider::HOME;
         }
         //if not success then return back with errors saying login failed
-        return back()
-            ->withErrors([
-                'email' => 'whoops check your email and password please',
-            ])
-            ->onlyInput('email');
+        return back()->withErrors(['email' => 'whoops check your email and password please',])->onlyInput('email');
     }
 
     //function to handle dashboard access
