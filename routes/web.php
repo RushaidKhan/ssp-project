@@ -19,6 +19,9 @@ Route::get('/', function () {
     return view('welcome');
 })->name('landing');
 
+Route::get('/store', function () { return view('store');})->name('store');
+
+
 Route::controller(authController::class)->group(function () {
     Route::get('/register', 'register')->name('register');
     Route::post('/store', 'store')->name('store');
