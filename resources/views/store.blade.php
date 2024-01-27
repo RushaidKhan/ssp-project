@@ -11,7 +11,7 @@
         </section>
         <br>
         <section class="productsHolder">
-
+            @include('components.product')
         </section>
     </div>
 @endsection

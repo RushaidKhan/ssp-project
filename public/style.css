@@ -280,7 +280,93 @@ nav div {
     opacity: 0.7;
 }
 .productsHolder {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     width: 95%;
     margin: auto;
+}
+.product {
+    border: 1px solid var(--pink);
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.product img {
+    width: 25%;
+    padding: 10px;
+    border-radius: 15px;
+}
+.productDetails {
+    width: 50%;
+    margin: 5px;
+    /* border: 1px solid black; */
+    padding: 10px;
+}
+.productDetails h1 {
+    font-size: 50px;
+    margin: 0;
+    font-weight: 500;
+    padding: 5px;
+    color: var(--blue);
+}
+.productDetails h2 {
+    font-size: 2em;
+    font-style: italic;
+    padding: 5px;
+    margin: 0;
+    font-weight: 400;
+    color: var(--pink);
+}
+.productDetails p {
+    margin: 0;
+    font-weight: 400;
+    font-size: 1.5em;
+    color: var(--green);
+    padding: 5px;
+}
+.productPrice {
+    width: 25%;
+    margin: 5px;
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-left: 2px solid var(--green);
+}
+.productPrice a {
+    padding: 10px;
+    margin: 10px;
+    font-size: 2em;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+}
+.productA {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+}
+.detailsA {
+    border: 1px solid var(--pink);
+    background-color: var(--pink);
+    color: var(--ivory);
+}
+.detailsA:hover {
+    border: 1px solid var(--pink);
+    background-color: var(--ivory);
+    color: var(--pink);
+    transition: all 0.3s ease-in;
+}
+.wishlistA {
+    border: 1px solid var(--blue);
+    background-color: var(--ivory);
+    color: var(--blue);
+}
+.wishlistA:hover {
+    border: 1px solid var(--blue);
+    background-color: var(--blue);
+    color: var(--ivory);
+    transition: all 0.3s ease-in;
 }

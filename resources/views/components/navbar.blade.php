@@ -20,7 +20,7 @@
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                     @csrf
                 </form>
-            <a href="{{route('home')}}">{{Auth::user()->name}}</a>    
+            <a href="{{route('dashboard')}}">{{Auth::user()->name}}</a>    
             @endguest
         </div>
     </nav>
