@@ -2,7 +2,7 @@
     <nav>
         <div>
             <a href="{{route('landing')}}">Home</a>
-            <a href="{{route('store')}}">Store</a>
+            <a href="{{route('stored-details')}}">Store</a>
             <a href="#">Blog</a>
         </div>
         <a href="{{route('landing')}}" class="mainNav">

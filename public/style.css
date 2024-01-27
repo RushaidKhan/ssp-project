@@ -294,6 +294,7 @@ nav div {
 }
 .product img {
     width: 25%;
+    height: 300px;
     padding: 10px;
     border-radius: 15px;
 }

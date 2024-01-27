@@ -11,7 +11,9 @@
         </section>
         <br>
         <section class="productsHolder">
+            @foreach($venues as $venue)
             @include('components.product')
+            @endforeach
         </section>
     </div>
 @endsection
