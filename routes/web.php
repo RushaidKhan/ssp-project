@@ -20,6 +20,7 @@ Route::get('/', function () {
 })->name('landing');
 
 Route::get('/store', function () { return view('store');})->name('store');
+Route::get('/venuelisting', function () { return view('posting.venuePosting');})->name('venue.listing');
 
 
 Route::controller(authController::class)->group(function () {
