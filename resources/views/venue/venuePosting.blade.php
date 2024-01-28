@@ -2,7 +2,8 @@
 
 @section('content')
     @include('components.navbar')
-    <div>
+    <div class="VPHolder">
+        <br>
         <form action="{{ route('venues.store') }}" method="post" enctype="multipart/form-data">
             @csrf
             <input type="text" name="name" id="name" placeholder="name"><br>

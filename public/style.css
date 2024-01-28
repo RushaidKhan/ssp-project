@@ -371,3 +371,54 @@ nav div {
     color: var(--ivory);
     transition: all 0.3s ease-in;
 }
+/*styling for dashboards*/
+
+.dashboardList {
+    border: 1px solid black;
+    width: 95%;
+    margin: auto;
+}
+.dashboardListHeader a {
+    padding: 10px;
+    font-size: 1.5em;
+    margin: 10px;
+    border: 1px solid black;
+    text-decoration: none;
+    color: var(--blue);
+}
+
+/*designs for venuePosting.blade.php*/
+
+.VPHolder form {
+    border: 1px solid black;
+    width: fit-content;
+    padding: 10px;
+    margin: auto;
+    border-radius: 10px;
+}
+.VPHolder form input[type="text"] {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid black;
+    font-size: 2em;
+    border-radius: 10px;
+    color: var(--blue);
+    background-color: transparent;
+}
+.VPHolder form input[type="file"] {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid black;
+    font-size: 23.5px;
+    border-radius: 10px;
+}
+.VPHolder form input[type="submit"] {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-size: 2em;
+    background-color: var(--blue);
+    color: var(--ivory);
+    text-transform: uppercase;
+}

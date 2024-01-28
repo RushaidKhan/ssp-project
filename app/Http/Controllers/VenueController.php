@@ -50,7 +50,7 @@ class VenueController extends Controller
     
     public function showStoredDetails()
     {
-        $venues = Venue::where('user_id', auth()->id())->get();
+        $venues = Venue::all(); 
 
         return view('store', compact('venues'));
     }

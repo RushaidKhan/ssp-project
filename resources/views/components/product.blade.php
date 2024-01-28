@@ -9,11 +9,11 @@
         <p>{{ $venue->description }}</p>
         <div class="productSubDetails">
             <h2>{{ $venue->location }}</h2>
-            <h2>Max guest: <span>{{ $venue->max_guest }}</span></h2>
+            <h2>Max guest: <span>{{ number_format($venue->max_guest) }}</span></h2>
         </div>
     </div>
     <div class="productPrice">
-        <h2>Price: <span>{{ $venue->price }} LKR per night</span></h2>
+        <h2>Price: <span>{{ number_format($venue->price) }} LKR per night</span></h2>
         <div class="productA">
             <a href="#" class="detailsA">Details</a>
             <a href="#" class="wishlistA">Wishlist</a>

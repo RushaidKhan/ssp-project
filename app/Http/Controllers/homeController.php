@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+use App\Models\Venue;
 
 class homeController extends Controller
 {
@@ -24,7 +25,9 @@ class homeController extends Controller
     //for venue
     public function venueHome(): View
     {
-        return view('dashboard.venue');
+        $venues = Venue::where('user_id', auth()->id())->get();
+
+        return view('dashboard.venue',compact('venues'));
     }
     //for catering
     public function cateringHome(): View
