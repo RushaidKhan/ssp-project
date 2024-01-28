@@ -20,9 +20,12 @@ Route::get('/', function () {
     return view('welcome');
 })->name('landing');
 
-Route::get('/stored-details', [VenueController::class, 'showStoredDetails'])->name('stored-details');
-Route::get('/venuelisting', function () { return view('venue.venuePosting');})->name('venue.listing');
+Route::get('/venue/view', function () {
+    return view('venue.venueView');
+})->name('venue.view');
 
+Route::get('/stored-details', [VenueController::class, 'showStoredDetails'])->name('stored-details');
+Route::get('/venuelisting', function () { return view('venue.venuePostig');})->name('venue.listing');
 
 Route::controller(authController::class)->group(function () {
     Route::get('/register', 'register')->name('register');

@@ -9,5 +9,6 @@
 </head>
 <body>
     @yield('content')
+    <script defer src="{{ asset('js/script.js') }}"></script>
 </body>
 </html>

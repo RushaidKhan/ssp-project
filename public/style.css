@@ -422,3 +422,46 @@ nav div {
     color: var(--ivory);
     text-transform: uppercase;
 }
+/*styling for venueView.blade.php*/
+.vvcontainer {
+    display: flex;
+}
+.vvimageholder {
+    border: 1px solid transparent;
+    width: 50%;
+}
+.vvimageholder img {
+    width: 100%;
+    height: 600px;
+}
+.carousel {
+    width: 100%;
+    overflow: hidden;
+}
+.carousel-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+.carousel-slide {
+    min-width: 100%;
+}
+.vvdetails {
+    padding: 10px;
+}
+.vvdetails h1 {
+    font-size: 5em;
+    margin: auto;
+    font-weight: 500;
+}
+.vvdetails p {
+    font-size: 3em;
+    margin: auto;
+}
+.vvsubdetails {
+    display: flex;
+}
+.vvsubdetails h2 {
+    padding: 10px;
+    font-size: 2em;
+    font-weight: 500;
+}
