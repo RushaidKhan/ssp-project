@@ -199,7 +199,7 @@ nav div {
     color: var(--pink);
 }
 .registerFormHolder form select {
-    width: 435px;
+    width: 91%;
 }
 .registerFormHolder form select option {
     background-color: transparent;
