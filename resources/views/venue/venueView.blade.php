@@ -1,37 +1,34 @@
 @extends('layout')
 @section('content')
-@include('components.navbar')
-    <div class="vvcontainer">
-        <br>
-        <div class="vvimageholder">
-            <div class="carousel">
-                <div class="carousel-container">
-                    <div class="carousel-slide">
-                        <img src="{{ asset('sample/one.jpg') }}" alt="Slide 1">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="{{ asset('sample/two.jpg') }}" alt="Slide 2">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="{{ asset('sample/three.jpg') }}" alt="Slide 3">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="{{ asset('sample/four.jpeg') }}" alt="Slide 3">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="{{ asset('sample/five.jpeg') }}" alt="Slide 3">
-                    </div>
-                </div>
+    @include('components.navbar')
+    <div class="venueViewContainer">
+        <div class="VenueViewImageHolder">
+            <div class="ImageLayer1">
+                    @if (!empty($venue->image1))
+                        <img src="{{ asset($venue->image1) }}" alt="Venue Image 1">
+                      @endif
+                    @if (!empty($venue->image2))
+                        <img src="{{ asset($venue->image2) }}" alt="Venue Image 1">
+                    @endif
+                    @if (!empty($venue->image3))
+                        <img src="{{ asset($venue->image3) }}" alt="Venue Image 1">
+                    @endif
+            </div>
+            <div class="ImageLayer2">
+                @if (!empty($venue->image4))
+                    <img src="{{ asset($venue->image4) }}" alt="Venue Image 1">
+                @endif
+                    @if (!empty($venue->image5))
+                        <img src="{{ asset($venue->image5) }}" alt="Venue Image 1">
+                    @endif
             </div>
         </div>
-        <div class="vvdetails">
+        <div class="VenueVenueDetailHolder">
             <h1>{{ $venue->name }}</h1>
-            <p>description</p>
-            <div class="vvsubdetails">
-                <h2>location</h2>
-                <h2>max guest</h2>
-                <h2>price</h2>
-            </div>
+            <p>{{ $venue->description }}</p>
+            <h2>Location: <span>{{ $venue->location }}</span></h2>
+            <h2>Max Guest: <span>{{ number_format($venue->max_guest) }} People</span></h2>
+            <h2>Price: <span>$ {{ number_format($venue->price) }} per night</span></h2>
         </div>
     </div>
 @endsection

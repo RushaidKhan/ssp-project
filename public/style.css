@@ -409,7 +409,7 @@ nav div {
     padding: 10px;
     margin: 10px;
     border: 1px solid black;
-    font-size: 23.5px;
+    font-size: 19px;
     border-radius: 10px;
 }
 .VPHolder form input[type="submit"] {
@@ -423,45 +423,44 @@ nav div {
     text-transform: uppercase;
 }
 /*styling for venueView.blade.php*/
-.vvcontainer {
-    display: flex;
-}
-.vvimageholder {
+.venueViewContainer{
     border: 1px solid transparent;
-    width: 50%;
+    margin: 10px;
 }
-.vvimageholder img {
-    width: 100%;
-    height: 600px;
-}
-.carousel {
-    width: 100%;
-    overflow: hidden;
-}
-.carousel-container {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-.carousel-slide {
-    min-width: 100%;
-}
-.vvdetails {
+.VenueViewImageHolder{
+    border: 1px solid var(--blue);
+    border-radius: 10px;
+    margin: 10px;
     padding: 10px;
 }
-.vvdetails h1 {
-    font-size: 5em;
-    margin: auto;
-    font-weight: 500;
-}
-.vvdetails p {
-    font-size: 3em;
-    margin: auto;
-}
-.vvsubdetails {
+.ImageLayer1,.ImageLayer2{
     display: flex;
+    padding:10px;
+    justify-content: space-evenly;
+    margin: 5px;
 }
-.vvsubdetails h2 {
+.ImageLayer1 img,
+.ImageLayer2 img{
+    width: 450px;
+    padding: 5px;
+    border-radius: 10px;
+}
+.VenueVenueDetailHolder{
+    border: 1px solid var(--blue);
+    border-radius: 10px;
+    margin: 10px;
     padding: 10px;
-    font-size: 2em;
-    font-weight: 500;
+}
+.VenueVenueDetailHolder h1{
+    color: var(--pink);
+}
+.VenueVenueDetailHolder p{
+    text-align: justify;
+    color: var(--green);
+}
+.VenueVenueDetailHolder h2{
+    color: var(--blue);
+}
+.VenueVenueDetailHolder h2 span{
+    color: var(--gold);
 }

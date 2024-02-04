@@ -24,9 +24,9 @@ Route::get('/venue/view', function () {return view('venue.venueView');})->name('
 
 //route for store page
 Route::get('/stored-details', [VenueController::class, 'showStoredDetails'])->name('stored-details');
-//single product page (not finalised )
-Route::get('/venuelisting', function () { return view('venue.venuePostig');})->name('venue.listing');
 
+// test route for showing individual product
+Route::get('/venues/{venue}', [VenueController::class, 'show'])->name('venue.show');
 
 // all routes related to authentication
 

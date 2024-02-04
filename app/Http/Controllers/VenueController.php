@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Venue;
+use Illuminate\Support\Facades\Auth;
 
 class VenueController extends Controller
 {
@@ -22,7 +23,7 @@ class VenueController extends Controller
             'price' => 'required|string',
             'images.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Adjust validation rules as needed
         ]);
-    
+
         $venueData = [
             'name' => $request->input('name'),
             'description' => $request->input('description'),
@@ -31,9 +32,9 @@ class VenueController extends Controller
             'price' => $request->input('price'),
             'user_id' => auth()->id(), // Assuming the user is logged in
         ];
-    
+
         $venue = Venue::create($venueData);
-    
+
         // Handle image uploads
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $key => $image) {
@@ -41,18 +42,21 @@ class VenueController extends Controller
                 $image->move(public_path('venue_images'), $imageName);
                 $venue->setAttribute('image' . ($key + 1), 'venue_images/' . $imageName);
             }
-    
+
             $venue->save();
         }
-    
-        return redirect()->back()->with('success', 'Venue posted successfully.');
+
+//        return redirect()->back()->with('success', 'Venue posted successfully.');
+        return redirect()->route('dashboard');
     }
-    
+
     public function showStoredDetails()
     {
-        $venues = Venue::all(); 
-
+        $venues = Venue::all();
         return view('store', compact('venues'));
     }
-    
+    public function show(Venue $venue)
+    {
+        return view('venue.venueView', ['venue' => $venue]);
+    }
 }
