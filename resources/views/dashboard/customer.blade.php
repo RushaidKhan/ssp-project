@@ -3,21 +3,18 @@
 @section('content')
 @include('components.navbar')
 <br>
-<div class="customerDashboardWrapper">
-    <div class="customerTopSection">
-        <div class="customerProfileHolder">
-            <img src="{{asset('svg/profile.svg')}}">
-            <div>
-                <h1>Name: {{Auth()->user()->name}}</h1>
-                <h2>Age: died</h2>
-                <h2>member since: 25th Febraury 2013</h2>
-            </div>
-        </div>
-        <div class="customerprofileButton">
-            <div><a href="#">Orders</a></div>
-            <div><a href="#">Favourties</a></div>
-            <div><a href="#">Notification</a></div>
-        </div>
+<div class="CustomerDashboardWrapper">
+    @include('components.AnalyticsCard')
+    <br>
+    <div class="CustomerDashboardListWrapper">
+        <h2>Requests:</h2>
+        @foreach($userRequests as $request)
+            @include('components.ReqCard')
+        @endforeach
+        <h2>Bookings:</h2>
+{{--        @include('components.ReqCard')--}}
+        <h2>History:</h2>
+{{--        @include('components.ReqCard')--}}
     </div>
 </div>
 @endsection

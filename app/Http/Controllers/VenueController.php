@@ -57,6 +57,7 @@ class VenueController extends Controller
     }
     public function show(Venue $venue)
     {
+        $venue->load('requests');
         return view('venue.venueView', ['venue' => $venue]);
     }
 }

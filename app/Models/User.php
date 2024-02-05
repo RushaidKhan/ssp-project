@@ -48,4 +48,8 @@ class User extends Authenticatable
     {
         return $this->hasMany(Venue::class)->latest();
     }
+    public function requests()
+    {
+        return $this->hasMany(Request::class, 'customer_id');
+    }
 }

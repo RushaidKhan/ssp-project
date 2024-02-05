@@ -3,6 +3,7 @@
 use App\Http\Controllers\authController;
 use App\Http\Controllers\homeController;
 use App\Http\Controllers\VenueController;
+use App\Http\Controllers\requestController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,7 +26,7 @@ Route::get('/venue/view', function () {return view('venue.venueView');})->name('
 //route for store page
 Route::get('/stored-details', [VenueController::class, 'showStoredDetails'])->name('stored-details');
 
-// test route for showing individual product
+//route for showing individual product
 Route::get('/venues/{venue}', [VenueController::class, 'show'])->name('venue.show');
 
 // all routes related to authentication
@@ -49,6 +50,12 @@ Route::controller(authController::class)->group(function () {
 Route::middleware(['auth', 'user-access:customer'])->group(function () {
     //route for customer dashboard
     Route::get('/home', [homeController::class, 'index'])->name('home');
+    //request related routes
+
+    //display request form
+    Route::get('/venues/{venue}/request', [RequestController::class, 'showRequestForm'])->name('venues.show-request-form');
+    //store the request in the request table
+    Route::post('/venues/{venue}/request', [RequestController::class, 'submitRequest'])->name('venues.submit-request');
 });
 
 // all routes related to venue (only accessible by the venue)

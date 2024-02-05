@@ -15,7 +15,9 @@ class homeController extends Controller
     //for customer
     public function index(): View
     {
-        return view('dashboard.customer');
+        $userRequests = auth()->user()->requests;
+
+        return view('dashboard.customer', compact('userRequests'));
     }
     //for admin
     public function adminHome(): View
@@ -26,8 +28,9 @@ class homeController extends Controller
     public function venueHome(): View
     {
         $venues = Venue::where('user_id', auth()->id())->get();
+        $userRequests = auth()->user()->requests;
 
-        return view('dashboard.venue',compact('venues'));
+        return view('dashboard.venue',compact('venues'), compact('userRequests'));
     }
     //for catering
     public function cateringHome(): View

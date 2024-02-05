@@ -207,44 +207,47 @@ nav div {
 }
 /*styling for customer.blade.php*/
 
-.customerDashboardWrapper {
+.CustomerDashboardWrapper {
     border: 1px solid black;
     margin: auto;
     width: 95%;
+    border-radius: 10px;
     padding: 10px;
 }
-.customerProfileHolder {
-    display: flex;
-    width: 40%;
-    border: 1px solid black;
-}
-.customerProfileHolder img {
-    width: 200px;
-}
-.customerTopSection {
-    display: flex;
-    border: 1px solid transparent;
-}
-.customerprofileButton {
-    border: 1px solid transparent;
-    width: 60%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.customerprofileButton div {
-    border: 1px solid var(--ivory);
-    height: 100%;
-    width: 34%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.CustomerDashboardAnalyticsWrapper{
+    border: 1px solid var(--blue);
     background-color: var(--blue);
+    border-radius: 10px;
+    padding: 10px;
 }
-.customerprofileButton div a {
-    font-size: 2em;
+.CustomerDashboardAnalyticsWrapper h1{
     color: var(--ivory);
-    text-decoration: none;
+}
+.CustomerDashboardAnalyticsWrapper h2{
+    color: var(--ivory);
+}
+.CustomerDashboardAnalyticsWrapper h2 span{
+    color: var(--gold);
+}
+.CustomerDashboardListWrapper{
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+}
+.CustomerListReqCard{
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px;
+}
+.CustomerPending{
+    color: var(--gold);
+}
+.CustomerAccepted{
+    color: green;
+}
+.CustomerDeclined{
+    color: red;
 }
 /*styling for store.blade.php*/
 
@@ -377,6 +380,8 @@ nav div {
     border: 1px solid black;
     width: 95%;
     margin: auto;
+    border-radius: 10px;
+    padding: 10px;
 }
 .dashboardListHeader a {
     padding: 10px;
@@ -422,6 +427,13 @@ nav div {
     color: var(--ivory);
     text-transform: uppercase;
 }
+.VPHolder form input[type="submit"]:hover {
+    cursor: pointer;
+    background-color: var(--ivory);
+    border: 1px solid var(--blue);
+    color: var(--blue);
+    transition: all 0.3s ease-in;
+}
 /*styling for venueView.blade.php*/
 .venueViewContainer{
     border: 1px solid transparent;
@@ -463,4 +475,12 @@ nav div {
 }
 .VenueVenueDetailHolder h2 span{
     color: var(--gold);
+}
+/*styling for venue.blade.php*/
+.VenueWrapper{
+    border:1px solid black;
+    margin: 10px;
+    width: 95%;
+    padding: 10px;
+    border-radius: 10px;
 }

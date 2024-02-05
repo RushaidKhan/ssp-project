@@ -15,7 +15,9 @@
         <h2>Price: <span>{{ number_format($venue->price) }} LKR per night</span></h2>
         <div class="productA">
                 <a href="{{ route('venue.show', ['venue' => $venue]) }}" class="detailsA">Details</a>
-            <a href="#" class="wishlistA">Wishlist</a>
+            @if(auth()->user() && auth()->user()->user_type == 'customer')
+            <a href="{{ route('venues.show-request-form', $venue) }}" class="wishlistA">Request</a>
+            @endif
         </div>
     </div>
 </div>

@@ -1,17 +1,21 @@
 @extends('layout')
 
 @section('content')
-@include('components.navbar')
-    <h1>Welcome, {{ auth()->user()->name}} !</h1>
-    <div class="dashboardListHeader">
-        <a href="{{route('venue.posting')}}">post a venue listing</a>
-    </div>
-    <br><br>
-    <div class="dashboardList">
-        @forelse($venues as $venue)
-            @include('components.product')
-        @empty
-            <p>No listings....</p>
-        @endforelse
+    @include('components.navbar')
+    <div class="VenueWrapper">
+        @include('components.AnalyticsCard')
+        <br>
+        <div class="dashboardListHeader">
+            <a href="{{ route('venue.posting') }}">post a venue listing</a>
+        </div>
+        <br><br>
+        <div class="dashboardList">
+            <h2>Venues | Total Venues: {{ Auth()->user()->venues()->count() }}</h2>
+            @forelse ($venues as $venue)
+                @include('components.product')
+            @empty
+                <p>No listings....</p>
+            @endforelse
+        </div>
     </div>
 @endsection

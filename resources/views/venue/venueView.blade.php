@@ -30,5 +30,13 @@
             <h2>Max Guest: <span>{{ number_format($venue->max_guest) }} People</span></h2>
             <h2>Price: <span>$ {{ number_format($venue->price) }} per night</span></h2>
         </div>
+        @if (auth()->check() && auth()->user()->user_type == 'venue')
+            <h2>Requests:</h2>
+            @forelse($venue->requests as $request)
+                @include('components.ReqCard', ['request' => $request])
+            @empty
+                <p>No requests for this venue.</p>
+            @endforelse
+        @endif
     </div>
 @endsection
