@@ -28,7 +28,7 @@
             <p>{{ $venue->description }}</p>
             <h2>Location: <span>{{ $venue->location }}</span></h2>
             <h2>Max Guest: <span>{{ number_format($venue->max_guest) }} People</span></h2>
-            <h2>Price: <span>$ {{ number_format($venue->price) }} per night</span></h2>
+            <h2>Price: <span> {{ number_format($venue->price) }} LKR per night</span></h2>
         </div>
         @if (auth()->check() && auth()->user()->user_type == 'venue')
             <h2>Requests:</h2>
